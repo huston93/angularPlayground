@@ -1,17 +1,28 @@
+<!-- Main Toolbar Containing Application Header -->
 <mat-toolbar color="primary">
-  <span>Material Theme Test</span>
-  <span class="fillSpace"></span>
-  <mat-slide-toggle
-    color="accent"
-    labelPosition="before"
-    (change)="toggleDarkTheme()"
-    [(ngModel)]="darkThemeOn"
-  >Dark Theme</mat-slide-toggle>
-</mat-toolbar>  
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
+  <mat-toolbar-row class="elevate">
+    <span>
+      <h1>Material Theme Test</h1>
+    </span>
+    <span class="fillSpace"></span>
+    <mat-slide-toggle
+      color="accent"
+      labelPosition="before"
+      (change)="toggleDarkTheme()"
+      [(ngModel)]="darkThemeOn"
+    >Dark Theme</mat-slide-toggle>
+  </mat-toolbar-row>
+  <mat-toolbar-row color="accent">
+    <h2>{{title}}</h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Main App Navigation -->
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let route of routes"
+                   (click)="activeRoute = route"
+                   [routerLink]="route"
+                   [active]="activeRoute == route">{{route | titlecase}}</a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>

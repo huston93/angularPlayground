@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
   darkThemeOn: boolean;
+  routes: Array<string>;
 
   constructor() {}
 
   ngOnInit() {
     // Set default material theme for app
     document.body.classList.add('light-theme');
+    this.routes = ['dashboard', 'heroes'];
   }
 
   toggleDarkTheme() {

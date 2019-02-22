@@ -13,7 +13,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 /* Angular Materials Imports */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatSlideToggleModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatSlideToggleModule,
+  MatTabsModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { MatToolbarModule, MatSlideToggleModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
