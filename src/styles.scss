@@ -1,0 +1,27 @@
+//Import custom theme definitions
+@import 'custom-themes.scss';
+//Import angular theming
+@import '~@angular/material/theming';
+//Sass mixin
+@include mat-core();
+
+//Define light theme class
+.light-theme {
+  @include angular-material-theme($light-theme);
+}
+
+//Define dark theme class
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
+
+//Global CSS styles
+
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}

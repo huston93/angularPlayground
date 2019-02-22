@@ -1,0 +1,56 @@
+//Angular theming library import
+@import '~@angular/material/theming';
+
+//Contrast Text Colors
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+//Define custom red palette (more dota-ey, possibly just use material red though)
+$custom-red: (
+  50: #f6e4e4,
+  100: #e9bbbb,
+  200: #db8e8e,
+  300: #cd6060,
+  400: #c23e3e,
+  500: #b71c1c,
+  600: #b01919,
+  700: #a71414,
+  800: #9f1111,
+  900: #900909,
+  A100: #ffbebe,
+  A200: #ff8b8b,
+  A400: #ff5858,
+  A700: #ff3f3f,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text
+  )
+);
+
+//Set default theme (light) colors
+$light-primary:  mat-palette($custom-red, 600, 400, 900);
+$light-accent:   mat-palette($mat-blue-grey, 600, 400, 900);
+$light-warn:     mat-palette($mat-amber);
+
+//Create default light theme
+$light-theme: mat-light-theme($light-primary,$light-accent,$light-warn);
+
+//Set dark theme colors
+$dark-primary:  mat-palette($custom-red, 900, 600, 900);
+$dark-accent:   mat-palette($mat-blue-grey, 900, 600, 900);
+$dark-warn:     mat-palette($mat-amber, 800);
+
+//Create dark theme
+$dark-theme: mat-dark-theme($dark-primary,$dark-accent,$dark-warn);
