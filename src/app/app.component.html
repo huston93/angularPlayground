@@ -23,6 +23,10 @@
                    (click)="activeRoute = route"
                    [routerLink]="route"
                    [active]="activeRoute == route">{{route | titlecase}}</a>
+    
 </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"
+                 (activate)="onRouteChange()"></router-outlet>
+</div>
+<app-messages *ngIf="showMessages"></app-messages>
